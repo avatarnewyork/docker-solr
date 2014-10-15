@@ -10,4 +10,4 @@ RUN tar -C /opt --extract --file /opt/$SOLR.tgz
 RUN ln -s /opt/$SOLR /opt/solr
 
 EXPOSE 8983
-CMD ["/bin/bash", "-c", "cd /opt/solr/example; java -jar start.jar"]
+CMD ["/bin/bash", "-c", "cd /opt/solr/example; java -Dsolr.solr.home=/var/solr -jar start.jar"]
